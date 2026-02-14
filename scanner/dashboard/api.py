@@ -1,3 +1,5 @@
+from scanner.dashboard.symbol_api import router as symbol_router
+
 from scanner.dashboard.timeline_api import router as timeline_router
 
 from fastapi.security import APIKeyHeader
@@ -46,6 +48,7 @@ app = FastAPI(title="AI_SCANNER_01 Dashboard API (Read-Only)")
 api_key_header = APIKeyHeader(name="Authorization", auto_error=False)
 
 app.include_router(timeline_router)
+app.include_router(symbol_router)
 
 # ----------------------------
 # ENDPOINTS
