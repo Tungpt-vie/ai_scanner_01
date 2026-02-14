@@ -1,3 +1,5 @@
+from scanner.dashboard.timeline_api import router as timeline_router
+
 from fastapi.security import APIKeyHeader
 from fastapi import Security
 
@@ -42,6 +44,8 @@ permissions = DashboardPermission(auth_guard)
 app = FastAPI(title="AI_SCANNER_01 Dashboard API (Read-Only)")
 
 api_key_header = APIKeyHeader(name="Authorization", auto_error=False)
+
+app.include_router(timeline_router)
 
 # ----------------------------
 # ENDPOINTS
