@@ -3,6 +3,8 @@ from scanner.dashboard.symbol_api import router as symbol_router
 from scanner.dashboard.observation_history_api import router as history_router
 from scanner.dashboard.regime_api import router as regime_router
 from scanner.dashboard.health_api import router as health_router
+from scanner.analytics.pattern_frequency_api import router as pattern_frequency_router
+
 
 from fastapi.security import APIKeyHeader
 from fastapi import Security
@@ -54,6 +56,7 @@ app.include_router(symbol_router)
 app.include_router(history_router)
 app.include_router(regime_router)
 app.include_router(health_router)
+app.include_router(pattern_frequency_router)
 
 # ----------------------------
 # ENDPOINTS
