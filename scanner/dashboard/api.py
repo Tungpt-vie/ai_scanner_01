@@ -1,8 +1,8 @@
-from scanner.dashboard.observation_history_api import router as history_router
-
-from scanner.dashboard.symbol_api import router as symbol_router
-
 from scanner.dashboard.timeline_api import router as timeline_router
+from scanner.dashboard.symbol_api import router as symbol_router
+from scanner.dashboard.observation_history_api import router as history_router
+from scanner.dashboard.regime_api import router as regime_router
+from scanner.dashboard.health_api import router as health_router
 
 from fastapi.security import APIKeyHeader
 from fastapi import Security
@@ -52,6 +52,8 @@ api_key_header = APIKeyHeader(name="Authorization", auto_error=False)
 app.include_router(timeline_router)
 app.include_router(symbol_router)
 app.include_router(history_router)
+app.include_router(regime_router)
+app.include_router(health_router)
 
 # ----------------------------
 # ENDPOINTS
