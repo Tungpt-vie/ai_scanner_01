@@ -4,6 +4,7 @@ from scanner.dashboard.observation_history_api import router as history_router
 from scanner.dashboard.regime_api import router as regime_router
 from scanner.dashboard.health_api import router as health_router
 from scanner.analytics.pattern_frequency_api import router as pattern_frequency_router
+from scanner.analytics.regime_trend_api import router as regime_trend_router
 
 
 from fastapi.security import APIKeyHeader
@@ -57,6 +58,7 @@ app.include_router(history_router)
 app.include_router(regime_router)
 app.include_router(health_router)
 app.include_router(pattern_frequency_router)
+app.include_router(regime_trend_router)
 
 # ----------------------------
 # ENDPOINTS
